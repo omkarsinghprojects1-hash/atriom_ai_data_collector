@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Data Portal</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --accent-color: #4f46e5; /* Modern Indigo */
+            --accent-hover: #4338ca;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Main Layout --- */
+        .main-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+                align-items: start;
+            }
+        }
+
+        /* --- Content Section --- */
+        .content-section h1 {
+            font-size: 2.5rem;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #1a202c;
+            font-size: 1.1rem;
+        }
+
+        /* --- Enhanced Form Section --- */
+        .form-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-card h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+            background-color: #f8fafc;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        /* Checkbox Group Styling */
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            margin-right: 0.5rem;
+            width: 1.1rem;
+            height: 1.1rem;
+            accent-color: var(--accent-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        #statusMessage {
+            margin-top: 1.25rem;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #2d3748;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">DataHub.io</a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#form-section">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="content-section" id="features">
+            <h1>Centralized Data Collection Portal</h1>
+            <p>Welcome to our modern repository workspace. Submit your metrics using the secure portal on the right. Your inputs are mapped and committed instantly to our core analytics spreadsheets.</p>
+            
+            <div class="feature-card">
+                <h3>⚡ Real-Time Synchronization</h3>
+                <p style="margin:0; font-size:0.9rem;">Data bypasses static locks and saves immediately using automated cloud endpoint configurations.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔒 Encrypted Transportation</h3>
+                <p style="margin:0; font-size:0.9rem;">Your records are safely tunneled through GitHub HTTPS protocols directly into your active dashboard storage.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Clean Structured Formats</h3>
+                <p style="margin:0; font-size:0.9rem;">Values are instantly categorized by date, department, and custom parameters for easy parsing.</p>
+            </div>
+        </section>
+
+        <section class="form-card" id="form-section">
+            <h2>Information Submission Form</h2>
+            
+            <form id="dataForm" action="https://script.google.com/macros/s/AKfycbwGJa5O5dNF3lI3ts_uLUB33IWdUsQEb-Caug3eh8Eo6SjePeKGJxPMBnZuzrpTqhiOmg/exec" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Select your sector...</option>
+                        <option value="Engineering">Engineering & Ops</option>
+                        <option value="Marketing">Marketing & Content</option>
+                        <option value="Sales">Accounts & Sales</option>
+                        <option value="Support">Customer Experience</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Interests (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interest_dev" value="Development"> Development
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interest_design" value="Design"> Design
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interest_data" value="Data Science"> Analytics
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Detailed Summary / Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter optional notes..." required></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn">Deploy to Spreadsheet</button>
+            </form>
+            <div id="statusMessage"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DataHub Portal Workspace. Proudly hosted on GitHub Pages.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #4a5568;">All transmissions are safe and bound to targeted application configurations.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('dataForm');
+        const statusMessage = document.getElementById('statusMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Transmitting Data...';
+            statusMessage.style.display = 'block';
+            statusMessage.style.color = '#718096';
+            statusMessage.innerText = 'Connecting to Google Apps Script database...';
+
+            const formData = new FormData(form);
+            
+            // Compile checked values into a clean string for the spreadsheet column
+            const selectedInterests = [];
+            if(form.querySelector('input[name="interest_dev"]').checked) selectedInterests.push("Dev");
+            if(form.querySelector('input[name="interest_design"]').checked) selectedInterests.push("Design");
+            if(form.querySelector('input[name="interest_data"]').checked) selectedInterests.push("Analytics");
+            formData.append('interests', selectedInterests.join(', ') || 'None');
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                statusMessage.style.color = '#10b981';
+                statusMessage.innerText = 'Success! Spreadsheet row appended.';
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Deploy to Spreadsheet';
+            })
+            .catch(error => {
+                statusMessage.style.color = '#ef4444';
+                statusMessage.innerText = 'Transmission error. Review settings and retry.';
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Deploy to Spreadsheet';
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

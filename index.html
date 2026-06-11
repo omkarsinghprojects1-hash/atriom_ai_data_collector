@@ -24,33 +24,40 @@
     </header>
 
     <section class="w-full max-w-2xl px-4 mt-8">
-        <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-orange-500 grid grid-cols-2 gap-6 items-center">
-            <div class="text-center group">
-                <div class="w-32 h-32 md:w-36 md:h-36 mx-auto rounded-2xl overflow-hidden shadow-lg border-2 border-orange-400 bg-slate-100 transition-transform duration-300 group-hover:scale-105">
-                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQBkNBstjTWN3pvSuoSttfUOsVGAWz163YRjEfn4cfjLiRQBZ_BkRsSKQc-rcdJ1DwnT6Ks4TpQyLmnjf8" alt="Narendra Modi" class="w-full h-full object-cover object-top">
-                </div>
-                <h3 class="text-sm md:text-base font-bold mt-3 text-slate-800">Shri Narendra Modi</h3>
-                <p class="text-xs text-slate-500 font-medium">Hon'ble Prime Minister</p>
-                <p class="text-[11px] text-orange-600 font-semibold font-['Hind_Siliguri'] mt-0.5">মাননীয় প্রধানমন্ত্রী</p>
-            </div>
-            
-            <div class="text-center group">
-                <div class="w-32 h-32 md:w-36 md:h-36 mx-auto rounded-2xl overflow-hidden shadow-lg border-2 border-orange-400 bg-slate-100 transition-transform duration-300 group-hover:scale-105">
-                    <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQRK1ydjH645_VKEjeK85EeOC3kRle5_MCaJt6hcDxnLaTqtwsZVPZDKQquTdCLdWGJoZq9xQLlyXPgSC0" alt="Suvendu Adhikari" class="w-full h-full object-cover object-top">
-                </div>
-                <h3 class="text-sm md:text-base font-bold mt-3 text-slate-800">Shri Suvendu Adhikari</h3>
-                <p class="text-xs text-slate-500 font-medium">Hon'ble Chief Minister, WB</p>
-                <p class="text-[11px] text-orange-600 font-semibold font-['Hind_Siliguri'] mt-0.5">মাননীয় মুখ্যমন্ত্রী, পশ্চিমবঙ্গ</p>
-            </div>
-        </div>
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 flex flex-col items-center justify-center relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-orange-50 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-50 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="mt-5 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-4 text-center border border-orange-100 shadow-sm">
-            <p class="text-xs md:text-sm italic text-orange-900 font-medium font-['Hind_Siliguri'] leading-relaxed">
-                "সবকা সাথ, সবকা বিকাশ, সবকা বিশ্বাস, সবকা প্রয়াস — প্রতিটি সরকারি জনকল্যাণমূলক প্রকল্প যেন সরাসরি কোনো অপচয় ছাড়াই প্রতিটি নাগরিকের কাছে পৌঁছায়।"
-            </p>
-            <p class="text-[11px] italic text-slate-500 mt-1.5 font-medium">
-                "Sabka Saath, Sabka Vikas, Sabka Vishwas, Sabka Prayas — Ensuring every welfare scheme reaches the last mile citizen directly without leakage."
-            </p>
+            <div class="flex flex-row items-center justify-center gap-8 md:gap-16 w-full">
+                
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-xl border-4 border-amber-400 p-1 bg-white ring-4 ring-orange-100 transition-transform duration-300 hover:scale-105">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQBkNBstjTWN3pvSuoSttfUOsVGAWz163YRjEfn4cfjLiRQBZ_BkRsSKQc-rcdJ1DwnT6Ks4TpQyLmnjf8" alt="Narendra Modi" class="w-full h-full object-cover object-top rounded-full">
+                    </div>
+                    <h3 class="text-sm md:text-base font-extrabold mt-4 text-slate-900 tracking-tight">Shri Narendra Modi</h3>
+                    <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Hon'ble Prime Minister</p>
+                    <p class="text-xs text-orange-600 font-bold font-['Hind_Siliguri'] mt-0.5">মাননীয় প্রধানমন্ত্রী</p>
+                </div>
+                
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg border-4 border-orange-400 p-1 bg-white ring-4 ring-orange-50 transition-transform duration-300 hover:scale-105">
+                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQRK1ydjH645_VKEjeK85EeOC3kRle5_MCaJt6hcDxnLaTqtwsZVPZDKQquTdCLdWGJoZq9xQLlyXPgSC0" alt="Suvendu Adhikari" class="w-full h-full object-cover object-top rounded-full">
+                    </div>
+                    <h3 class="text-xs md:text-sm font-bold mt-4 text-slate-800 tracking-tight">Shri Suvendu Adhikari</h3>
+                    <p class="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">Hon'ble Chief Minister, WB</p>
+                    <p class="text-xs text-orange-600 font-bold font-['Hind_Siliguri'] mt-0.5">মাননীয় মুখ্যমন্ত্রী, পশ্চিমবঙ্গ</p>
+                </div>
+
+            </div>
+
+            <div class="mt-8 w-full bg-gradient-to-r from-orange-50/60 to-amber-50/60 rounded-2xl p-4 text-center border border-orange-100/70 shadow-inner">
+                <p class="text-xs md:text-sm italic text-orange-950 font-semibold font-['Hind_Siliguri'] leading-relaxed">
+                    "সবকা সাথ, সবকা বিকাশ, সবকা বিশ্বাস, সবকা প্রয়াস — প্রতিটি সরকারি জনকল্যাণমূলক প্রকল্প যেন সরাসরি কোনো অপচয় ছাড়াই প্রতিটি নাগরিকের কাছে পৌঁছায়।"
+                </p>
+                <p class="text-[11px] italic text-slate-500 mt-2 font-medium tracking-wide">
+                    "Sabka Saath, Sabka Vikas, Sabka Vishwas, Sabka Prayas — Ensuring every welfare scheme reaches the last mile citizen directly without leakage."
+                </p>
+            </div>
         </div>
     </section>
 
@@ -153,8 +160,8 @@
     </main>
 
     <script>
-        // Replace with the Deployment Web App URL from Google Sheets
-        const APPS_SCRIPT_API_URL = "YOUR_DEPLOYED_WEB_APP_URL_HERE";
+        // Your Google Apps Script Deployment Web App URL Link Connected Successfully Below
+        const APPS_SCRIPT_API_URL = "https://script.google.com/macros/s/AKfycbzbbH_S8VLf1uBkN0ZTLhd2tASQ__loWh0UqQNKkiUxGJTHEyjDbmixYw6wh78vMuZX1A/exec";
 
         // Generate the mandatory 1 to 25 choices inside dropdown select
         const wardSelect = document.getElementById('wardNo');

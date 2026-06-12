@@ -1125,8 +1125,14 @@
                                         <div class="field-label"><i class="fa-solid fa-tag"></i> Type <span class="bn">/
                                                 ধরন</span></div>
                                         <input type="text" id="holdingType" placeholder="COM / DOM / GOVT"
+                                            list="holdingTypeOptions"
                                             style="border-color: #D1D5DB; color: #374151; text-transform: uppercase;"
                                             oninput="this.value = this.value.toUpperCase()">
+                                        <datalist id="holdingTypeOptions">
+                                            <option value="DOM">DOM — Domestic</option>
+                                            <option value="COM">COM — Commercial</option>
+                                            <option value="GOVT">GOVT — Government</option>
+                                        </datalist>
                                     </div>
                                 </div>
 
@@ -1382,7 +1388,7 @@
 
                     <script>
                         // ── BACKEND WEB APP CONFIGURATION ──────────────────────────
-                        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzX93-GZPp5I_KiRwGuk8PYkfbl7fzefzIWu6LXLcdaA_jFKnUvxvI4bHNofRaWMY3sjg/exec";
+                        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIzQkffxgcVBj4Y9Lbaff3IDScAsyTYvVD-YEPyplTwcVvjDQfveEc_RiAKXUJ0W2ceQ/exec";
 
                         // ── UI ELEMENTS ────────────────────────────────────────────
                         const loginCard = document.getElementById('loginCard');

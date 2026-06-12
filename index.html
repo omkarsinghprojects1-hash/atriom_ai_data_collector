@@ -1389,6 +1389,7 @@
 
                 const headNameInput = document.getElementById('headName');
                 const holdingNoInput = document.getElementById('holdingNo');
+                const holdingTypeInput = document.getElementById('holdingType');
                 const familyCountInput = document.getElementById('familyCount');
                 const aadhaarNoInput = document.getElementById('aadhaarNo');
                 const contactNoInput = document.getElementById('contactNo');
@@ -1546,9 +1547,8 @@
                     // Clear visual highlight classes
                     headNameInput.classList.remove('input-success', 'input-error');
                     holdingNoInput.classList.remove('input-success', 'input-error');
+                    if (holdingTypeInput) holdingTypeInput.classList.remove('input-success');
                     assesseeIdInput.classList.remove('input-error');
-                    const holdingTypeInput = document.getElementById('holdingType');
-                    if(holdingTypeInput) holdingTypeInput.classList.remove('input-success');
 
                     const payload = { action: 'fetchAssessee', assesseeId: id };
 

@@ -1573,7 +1573,7 @@
                             holdingNoInput.classList.add('input-success');
                             if (holdingTypeInput && data.holdingType) holdingTypeInput.classList.add('input-success');
 
-                            showFetchStatus('success', '✅ Details fetched automatically.');
+                            showFetchStatus('success', '✅ Fetched: ' + (data.assesseeName || 'N/A') + ' | Type: ' + (data.holdingType || '⚠️ NOT RETURNED - Redeploy Apps Script!'));
                             clearStatus();
                         } else {
                             showFetchStatus('error', '⚠️ Assessee ID not found. Enter details manually.');

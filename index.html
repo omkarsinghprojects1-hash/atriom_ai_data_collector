@@ -1114,14 +1114,19 @@
                                 <!-- HOLDING NO & TYPE -->
                                 <div style="display: flex; gap: 14px;">
                                     <div class="field-group" style="flex: 2;">
-                                        <div class="field-label"><i class="fa-solid fa-house-chimney"></i> Holding Number
-                                            <span class="bn">/ হোল্ডিং নম্বর</span> <span class="req">*</span></div>
+                                        <div class="field-label"><i class="fa-solid fa-house-chimney"></i> Holding
+                                            Number
+                                            <span class="bn">/ হোল্ডিং নম্বর</span> <span class="req">*</span>
+                                        </div>
                                         <input type="text" id="holdingNo" placeholder="Holding Number (যেমন: H-123)"
                                             required>
                                     </div>
                                     <div class="field-group" style="flex: 1;">
-                                        <div class="field-label"><i class="fa-solid fa-tag"></i> Type <span class="bn">/ ধরন</span></div>
-                                        <input type="text" id="holdingType" placeholder="COM / DOM / GOVT" style="border-color: #D1D5DB; color: #374151; text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
+                                        <div class="field-label"><i class="fa-solid fa-tag"></i> Type <span class="bn">/
+                                                ধরন</span></div>
+                                        <input type="text" id="holdingType" placeholder="COM / DOM / GOVT"
+                                            style="border-color: #D1D5DB; color: #374151; text-transform: uppercase;"
+                                            oninput="this.value = this.value.toUpperCase()">
                                     </div>
                                 </div>
 
@@ -1149,7 +1154,8 @@
                                 <!-- VOTER ID -->
                                 <div class="field-group">
                                     <div class="field-label"><i class="fa-solid fa-check-to-slot"></i> Voter ID (EPIC)
-                                        <span class="bn">/ ভোটার কার্ড নম্বর</span></div>
+                                        <span class="bn">/ ভোটার কার্ড নম্বর</span>
+                                    </div>
                                     <input type="text" id="voterNo" placeholder="e.g. WB/01/234/012345">
                                 </div>
 
@@ -1215,8 +1221,9 @@
                                         <i class="fa-solid fa-store" style="color:#2563EB;"></i>
                                         <strong>Commercial Ownership Status / বাণিজ্যিক মালিকানা স্ট্যাটাস</strong>
                                     </div>
-                                    <p class="radio-sub">Does this assessee have commercial ownership? / এই করদাতার কি বাণিজ্যিক মালিকানা আছে?</p>
-                                    
+                                    <p class="radio-sub">Does this assessee have commercial ownership? / এই করদাতার কি
+                                        বাণিজ্যিক মালিকানা আছে?</p>
+
                                     <div class="radio-options">
                                         <label class="radio-pill">
                                             <input type="radio" name="commercialOwnership" value="Yes" id="commYes">
@@ -1226,7 +1233,8 @@
                                             </div>
                                         </label>
                                         <label class="radio-pill">
-                                            <input type="radio" name="commercialOwnership" value="No" id="commNo" checked>
+                                            <input type="radio" name="commercialOwnership" value="No" id="commNo"
+                                                checked>
                                             <div class="pill-label">
                                                 <strong>❌ No — None</strong>
                                                 <span>না</span>
@@ -1335,497 +1343,506 @@
                         </div>
                     </div>
 
-            <footer>
-                🏛️ Jalpaiguri Municipal Corporation &nbsp;·&nbsp; Citizen Data Registry &nbsp;·&nbsp;
-                সমস্ত তথ্য সুরক্ষিত ও গোপনীয় — All data is securely stored ward-wise.
-            </footer>
+                    <footer>
+                        🏛️ Jalpaiguri Municipal Corporation &nbsp;·&nbsp; Citizen Data Registry &nbsp;·&nbsp;
+                        সমস্ত তথ্য সুরক্ষিত ও গোপনীয় — All data is securely stored ward-wise.
+                    </footer>
 
-    <!-- ═══ MODAL FOR WARD VERIFICATION ═══ -->
-    <div id="wardVerifyModal" class="modal-overlay hidden">
-        <div class="modal-card">
-            <div class="modal-header">
-                <i class="fa-solid fa-triangle-exclamation" style="color:#D97706; font-size:24px;"></i>
-                <h3 style="margin-left: 10px; color:#92400E; margin-bottom: 0;">Verify Ward Mapping</h3>
-            </div>
-            <div class="modal-body">
-                <p>You are about to submit data for:</p>
-                <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.5;">
-                    <li><strong>Assessee Name:</strong> <span id="modalName" style="color: #4B5563;"></span></li>
-                    <li><strong>Assessee ID:</strong> <span id="modalId" style="color: #4B5563;"></span></li>
-                </ul>
-                <p style="margin-top:16px; font-weight:600; color:#1D4ED8; font-size: 16px;">Target Ward: <span id="modalWard"></span></p>
-                <p class="hint" style="margin-top:16px;">Is this Ward number correct? If this citizen belongs to a different ward, please click 'No, Go Back' and change the Ward Number.</p>
-            </div>
-            <div class="modal-footer" style="display: flex; gap: 12px; margin-top: 24px;">
-                <button type="button" class="btn-cancel" id="modalCancelBtn" style="flex: 1; padding: 12px; background: #F3F4F6; border: 1px solid #D1D5DB; border-radius: 8px; font-weight: 600; cursor: pointer;">No, Go Back</button>
-                <button type="button" class="btn-confirm" id="modalConfirmBtn" style="flex: 1; padding: 12px; background: #2563EB; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Yes, Submit Data</button>
-            </div>
-        </div>
-    </div>
+                    <!-- ═══ MODAL FOR WARD VERIFICATION ═══ -->
+                    <div id="wardVerifyModal" class="modal-overlay hidden">
+                        <div class="modal-card">
+                            <div class="modal-header">
+                                <i class="fa-solid fa-triangle-exclamation" style="color:#D97706; font-size:24px;"></i>
+                                <h3 style="margin-left: 10px; color:#92400E; margin-bottom: 0;">Verify Ward Mapping</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>You are about to submit data for:</p>
+                                <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.5;">
+                                    <li><strong>Assessee Name:</strong> <span id="modalName"
+                                            style="color: #4B5563;"></span></li>
+                                    <li><strong>Assessee ID:</strong> <span id="modalId" style="color: #4B5563;"></span>
+                                    </li>
+                                </ul>
+                                <p style="margin-top:16px; font-weight:600; color:#1D4ED8; font-size: 16px;">Target
+                                    Ward: <span id="modalWard"></span></p>
+                                <p class="hint" style="margin-top:16px;">Is this Ward number correct? If this citizen
+                                    belongs to a different ward, please click 'No, Go Back' and change the Ward Number.
+                                </p>
+                            </div>
+                            <div class="modal-footer" style="display: flex; gap: 12px; margin-top: 24px;">
+                                <button type="button" class="btn-cancel" id="modalCancelBtn"
+                                    style="flex: 1; padding: 12px; background: #F3F4F6; border: 1px solid #D1D5DB; border-radius: 8px; font-weight: 600; cursor: pointer;">No,
+                                    Go Back</button>
+                                <button type="button" class="btn-confirm" id="modalConfirmBtn"
+                                    style="flex: 1; padding: 12px; background: #2563EB; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Yes,
+                                    Submit Data</button>
+                            </div>
+                        </div>
+                    </div>
 
-            <script>
-                // ── BACKEND WEB APP CONFIGURATION ──────────────────────────
-                const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIzQkffxgcVBj4Y9Lbaff3IDScAsyTYvVD-YEPyplTwcVvjDQfveEc_RiAKXUJ0W2ceQ/exec";
+                    <script>
+                        // ── BACKEND WEB APP CONFIGURATION ──────────────────────────
+                        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIzQkffxgcVBj4Y9Lbaff3IDScAsyTYvVD-YEPyplTwcVvjDQfveEc_RiAKXUJ0W2ceQ/exec";
 
-                // ── UI ELEMENTS ────────────────────────────────────────────
-                const loginCard = document.getElementById('loginCard');
-                const citizenCard = document.getElementById('citizenCard');
-                const agentHeader = document.getElementById('agentHeader');
-                const agentNameDisplay = document.getElementById('agentNameDisplay');
-                const logoutBtn = document.getElementById('logoutBtn');
-                const loginForm = document.getElementById('loginForm');
-                const citizenForm = document.getElementById('citizenForm');
-                const wardSel = document.getElementById('wardNo');
+                        // ── UI ELEMENTS ────────────────────────────────────────────
+                        const loginCard = document.getElementById('loginCard');
+                        const citizenCard = document.getElementById('citizenCard');
+                        const agentHeader = document.getElementById('agentHeader');
+                        const agentNameDisplay = document.getElementById('agentNameDisplay');
+                        const logoutBtn = document.getElementById('logoutBtn');
+                        const loginForm = document.getElementById('loginForm');
+                        const citizenForm = document.getElementById('citizenForm');
+                        const wardSel = document.getElementById('wardNo');
 
-                const taxYes = document.getElementById('taxYes');
-                const taxNo = document.getElementById('taxNo');
-                const taxNotes = document.getElementById('taxNotes');
-                const taxWrap = document.getElementById('taxNotesWrap');
-                const tradeLicenseWrap = document.getElementById('tradeLicenseWrap');
+                        const taxYes = document.getElementById('taxYes');
+                        const taxNo = document.getElementById('taxNo');
+                        const taxNotes = document.getElementById('taxNotes');
+                        const taxWrap = document.getElementById('taxNotesWrap');
+                        const tradeLicenseWrap = document.getElementById('tradeLicenseWrap');
 
-                const assesseeIdInput = document.getElementById('assesseeId');
-                const fetchDetailsBtn = document.getElementById('fetchDetailsBtn');
-                const fetchStatus = document.getElementById('fetchStatus');
+                        const assesseeIdInput = document.getElementById('assesseeId');
+                        const fetchDetailsBtn = document.getElementById('fetchDetailsBtn');
+                        const fetchStatus = document.getElementById('fetchStatus');
 
-                const headNameInput = document.getElementById('headName');
-                const holdingNoInput = document.getElementById('holdingNo');
-                const holdingTypeInput = document.getElementById('holdingType');
-                const familyCountInput = document.getElementById('familyCount');
-                const aadhaarNoInput = document.getElementById('aadhaarNo');
-                const contactNoInput = document.getElementById('contactNo');
+                        const headNameInput = document.getElementById('headName');
+                        const holdingNoInput = document.getElementById('holdingNo');
+                        const holdingTypeInput = document.getElementById('holdingType');
+                        const familyCountInput = document.getElementById('familyCount');
+                        const aadhaarNoInput = document.getElementById('aadhaarNo');
+                        const contactNoInput = document.getElementById('contactNo');
 
-                // Validation error containers
-                const familyCountError = document.getElementById('familyCountError');
-                const aadhaarError = document.getElementById('aadhaarError');
-                const contactError = document.getElementById('contactError');
+                        // Validation error containers
+                        const familyCountError = document.getElementById('familyCountError');
+                        const aadhaarError = document.getElementById('aadhaarError');
+                        const contactError = document.getElementById('contactError');
 
-                // ── INITIALIZATION ─────────────────────────────────────────
-                // Populate Wards 1 to 25
-                for (let i = 1; i <= 25; i++) {
-                    const o = document.createElement('option');
-                    o.value = i;
-                    o.textContent = `Ward ${i} / ওয়ার্ড ${i}`;
-                    wardSel.appendChild(o);
-                }
-
-                // Check active session
-                checkSession();
-
-                function checkSession() {
-                    const loggedInAgent = sessionStorage.getItem("loggedInAgent");
-                    if (loggedInAgent) {
-                        loginCard.classList.add('hidden');
-                        citizenCard.classList.remove('hidden');
-                        agentHeader.classList.remove('hidden');
-                        agentNameDisplay.textContent = loggedInAgent;
-                    } else {
-                        loginCard.classList.remove('hidden');
-                        citizenCard.classList.add('hidden');
-                        agentHeader.classList.add('hidden');
-                    }
-                }
-
-                // Logout action
-                logoutBtn.addEventListener('click', () => {
-                    sessionStorage.removeItem("loggedInAgent");
-                    checkSession();
-                    showLoginStatus('success', '🔐 Logged out successfully.');
-                });
-
-                // ── AGENT LOGIN FLOW ───────────────────────────────────────
-                loginForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    const user = document.getElementById('loginUsername').value.trim();
-                    const pass = document.getElementById('loginPassword').value.trim();
-                    const btn = document.getElementById('loginBtn');
-
-                    if (!user || !pass) {
-                        showLoginStatus('error', '⚠️ Please enter both login ID and password.');
-                        return;
-                    }
-
-                    btn.disabled = true;
-                    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Authenticating…';
-                    showLoginStatus('loading', '⏳ Verifying credentials with database...');
-
-                    const payload = { action: 'login', username: user, password: pass };
-
-                    try {
-                        // Send standard request
-                        const response = await fetch(APPS_SCRIPT_URL, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'text/plain' }, // Avoid preflight CORS issues in some environments
-                            body: JSON.stringify(payload)
-                        });
-
-                        const data = await response.json();
-
-                        if (data.status === 'success') {
-                            sessionStorage.setItem("loggedInAgent", data.name || user);
-                            showLoginStatus('success', '✅ Login successful! Loading form...');
-                            setTimeout(() => {
-                                checkSession();
-                                loginForm.reset();
-                                document.getElementById('loginStatus').className = 'status-banner';
-                                document.getElementById('loginStatus').textContent = '';
-                            }, 1000);
-                        } else {
-                            showLoginStatus('error', '❌ ' + (data.message || 'Invalid Login ID or Password.'));
+                        // ── INITIALIZATION ─────────────────────────────────────────
+                        // Populate Wards 1 to 25
+                        for (let i = 1; i <= 25; i++) {
+                            const o = document.createElement('option');
+                            o.value = i;
+                            o.textContent = `Ward ${i} / ওয়ার্ড ${i}`;
+                            wardSel.appendChild(o);
                         }
-                    } catch (err) {
-                        console.error("Authentication failed, checking offline demo bypass:", err);
-                        // OFFLINE FALLBACK FOR TESTING PURPOSES
-                        if (user.toLowerCase() === 'admin' && pass === 'admin123') {
-                            sessionStorage.setItem("loggedInAgent", "Administrator (Demo)");
-                            showLoginStatus('success', '✅ [Demo Mode] Login successful!');
-                            setTimeout(() => {
-                                checkSession();
-                                loginForm.reset();
-                                document.getElementById('loginStatus').className = 'status-banner';
-                                document.getElementById('loginStatus').textContent = '';
-                            }, 1000);
-                        } else {
-                            showLoginStatus('error', '❌ Web app connection error. Double-check your APPS_SCRIPT_URL config.');
-                        }
-                    } finally {
-                        btn.disabled = false;
-                        btn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> লগইন করুন &nbsp;/&nbsp; Secure Login';
-                    }
-                });
 
-                function showLoginStatus(type, msg) {
-                    const el = document.getElementById('loginStatus');
-                    el.className = 'status-banner ' + type;
-                    el.textContent = msg;
-                }
+                        // Check active session
+                        checkSession();
 
-                // ── TAX CLEARANCE TOGGLE ──────────────────────────────────
-                function syncTax() {
-                    if (taxYes.checked) {
-                        taxWrap.classList.add('collapsed');
-                        taxNotes.value = '';
-                    } else {
-                        taxWrap.classList.remove('collapsed');
-                    }
-                }
-                taxYes.addEventListener('change', syncTax);
-                taxNo.addEventListener('change', syncTax);
-                syncTax();
-
-                // ── COMMERCIAL OWNERSHIP TOGGLE ───────────────────────────
-                const commYes = document.getElementById('commYes');
-                const commNo = document.getElementById('commNo');
-
-                function syncCommercial() {
-                    if (commYes && commYes.checked) {
-                        tradeLicenseWrap.classList.remove('collapsed');
-                    } else {
-                        tradeLicenseWrap.classList.add('collapsed');
-                        // Reset trade license selection to default 'No'
-                        const tradeNoBtn = document.getElementById('tradeNo');
-                        if(tradeNoBtn) tradeNoBtn.checked = true;
-                    }
-                }
-                if (commYes && commNo) {
-                    commYes.addEventListener('change', syncCommercial);
-                    commNo.addEventListener('change', syncCommercial);
-                    syncCommercial();
-                }
-
-                // ── AUTO-FETCH ASSESSEE DETAILS ────────────────────────────
-                async function fetchAssesseeData() {
-                    const id = assesseeIdInput.value.trim();
-                    if (!id) return;
-
-                    // Prevent fetching if already querying
-                    if (fetchDetailsBtn.disabled) return;
-
-                    fetchDetailsBtn.disabled = true;
-                    fetchDetailsBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
-                    showFetchStatus('loading', '⏳ Searching master database...');
-
-                    // Clear visual highlight classes
-                    headNameInput.classList.remove('input-success', 'input-error');
-                    holdingNoInput.classList.remove('input-success', 'input-error');
-                    if (holdingTypeInput) holdingTypeInput.classList.remove('input-success');
-                    assesseeIdInput.classList.remove('input-error');
-
-                    const payload = { action: 'fetchAssessee', assesseeId: id };
-
-                    try {
-                        const response = await fetch(APPS_SCRIPT_URL, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'text/plain' },
-                            body: JSON.stringify(payload)
-                        });
-                        const result = await response.json();
-
-                        if (result.status === 'success' && result.data) {
-                            const data = result.data;
-                            headNameInput.value = data.assesseeName || '';
-                            holdingNoInput.value = data.holdingNo || '';
-                            if (holdingTypeInput) {
-                                holdingTypeInput.value = data.holdingType || '';
-                            }
-
-                            // Flash success animations
-                            headNameInput.classList.add('input-success');
-                            holdingNoInput.classList.add('input-success');
-                            if (holdingTypeInput && data.holdingType) holdingTypeInput.classList.add('input-success');
-
-                            showFetchStatus('success', '✅ Fetched: ' + (data.assesseeName || 'N/A') + ' | Type: ' + (data.holdingType || '⚠️ NOT RETURNED - Redeploy Apps Script!'));
-                            clearStatus();
-                        } else {
-                            showFetchStatus('error', '⚠️ Assessee ID not found. Enter details manually.');
-                            assesseeIdInput.classList.add('input-error');
-                        }
-                    } catch (err) {
-                        console.error("Fetch query failed:", err);
-                        showFetchStatus('error', '⚠️ Fetch query failed. Server offline or CORS blocking.');
-                    } finally {
-                        fetchDetailsBtn.disabled = false;
-                        fetchDetailsBtn.innerHTML = '<i class="fa-solid fa-rotate"></i> Fetch / খুঁজুন';
-                    }
-                }
-
-                // Trigger fetch on button click or field blur
-                fetchDetailsBtn.addEventListener('click', fetchAssesseeData);
-                assesseeIdInput.addEventListener('blur', function () {
-                    // Trigger fetch only if ID contains substantial text
-                    if (assesseeIdInput.value.trim().length >= 3) {
-                        fetchAssesseeData();
-                    }
-                });
-
-                function showFetchStatus(type, msg) {
-                    fetchStatus.className = 'fetch-status-text ' + type;
-                    fetchStatus.textContent = msg;
-                }
-
-                // ── FORM VALIDATION ────────────────────────────────────────
-                // Integer numbers only for family members
-                familyCountInput.addEventListener('input', () => {
-                    const val = familyCountInput.value.trim();
-                    const isValid = /^[1-9]\d*$/.test(val); // Positive integer
-                    if (val === '' || isValid) {
-                        familyCountInput.classList.remove('input-error');
-                        familyCountError.classList.remove('visible');
-                    } else {
-                        familyCountInput.classList.add('input-error');
-                        familyCountError.classList.add('visible');
-                    }
-                });
-
-                // 12-digit format check for Aadhaar
-                aadhaarNoInput.addEventListener('input', () => {
-                    const val = aadhaarNoInput.value.trim();
-                    const isValid = /^\d{12}$/.test(val);
-                    if (val === '' || isValid) {
-                        aadhaarNoInput.classList.remove('input-error');
-                        aadhaarError.classList.remove('visible');
-                        if (val !== '') aadhaarNoInput.classList.add('input-success');
-                    } else {
-                        aadhaarNoInput.classList.add('input-error');
-                        aadhaarNoInput.classList.remove('input-success');
-                        aadhaarError.classList.add('visible');
-                    }
-                });
-
-                // 10-digit format check for Mobile (starting with 6-9)
-                contactNoInput.addEventListener('input', () => {
-                    const val = contactNoInput.value.trim();
-                    const isValid = /^[6-9]\d{9}$/.test(val);
-                    if (val === '' || isValid) {
-                        contactNoInput.classList.remove('input-error');
-                        contactError.classList.remove('visible');
-                        if (val !== '') contactNoInput.classList.add('input-success');
-                    } else {
-                        contactNoInput.classList.add('input-error');
-                        contactNoInput.classList.remove('input-success');
-                        contactError.classList.add('visible');
-                    }
-                });
-
-                // ── FORM SUBMISSION ────────────────────────────────────────
-                citizenForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-
-                    const ward = wardSel.value;
-                    const assesseeId = assesseeIdInput.value.trim();
-                    const headName = headNameInput.value.trim();
-                    const holdingNo = holdingNoInput.value.trim();
-                    const familyCount = familyCountInput.value.trim();
-                    const aadhaarNo = aadhaarNoInput.value.trim();
-                    const contactNo = contactNoInput.value.trim();
-
-                    // 1. Check Required fields
-                    if (!ward) {
-                        showStatus('error', '⚠️ অনুগ্রহ করে ওয়ার্ড নম্বর নির্বাচন করুন।\nPlease select a Ward Number.');
-                        wardSel.focus();
-                        return;
-                    }
-                    if (!assesseeId) {
-                        showStatus('error', '⚠️ অনুগ্রহ করে করদাতা আইডি লিখুন।\nPlease enter the Assessee ID.');
-                        assesseeIdInput.focus();
-                        return;
-                    }
-                    if (!headName) {
-                        showStatus('error', '⚠️ অনুগ্রহ করে পরিবারের প্রধানের নাম লিখুন।\nPlease enter the Family Head Name.');
-                        headNameInput.focus();
-                        return;
-                    }
-                    if (!holdingNo) {
-                        showStatus('error', '⚠️ অনুগ্রহ করে হোল্ডিং নম্বর লিখুন।\nPlease enter the Holding Number.');
-                        holdingNoInput.focus();
-                        return;
-                    }
-
-                    // 2. Validate Family Count
-                    if (!/^[1-9]\d*$/.test(familyCount)) {
-                        showStatus('error', '⚠️ পরিবারের সদস্য সংখ্যা ভুল।\nPlease correct the Family Members field.');
-                        familyCountInput.focus();
-                        return;
-                    }
-
-                    // 3. Validate Aadhaar (if provided)
-                    if (aadhaarNo !== '' && !/^\d{12}$/.test(aadhaarNo)) {
-                        showStatus('error', '⚠️ আধার নম্বর ভুল।\nPlease correct the Aadhaar Card Number.');
-                        aadhaarNoInput.focus();
-                        return;
-                    }
-
-                    // 4. Validate Contact (if provided)
-                    if (contactNo !== '' && !/^[6-9]\d{9}$/.test(contactNo)) {
-                        showStatus('error', '⚠️ যোগাযোগ নম্বর ভুল।\nPlease correct the Contact Number.');
-                        contactNoInput.focus();
-                        return;
-                    }
-
-                    // Modal Verification Trigger
-                    const modal = document.getElementById('wardVerifyModal');
-                    document.getElementById('modalName').textContent = headName;
-                    document.getElementById('modalId').textContent = assesseeId;
-                    document.getElementById('modalWard').textContent = ward;
-                    modal.classList.remove('hidden');
-                    
-                    // Attach one-time event listeners
-                    const confirmBtn = document.getElementById('modalConfirmBtn');
-                    const cancelBtn = document.getElementById('modalCancelBtn');
-                    
-                    const handleCancel = () => {
-                        modal.classList.add('hidden');
-                        cleanupModal();
-                    };
-                    
-                    const handleConfirm = async () => {
-                        modal.classList.add('hidden');
-                        cleanupModal();
-                        await executeSubmission();
-                    };
-                    
-                    const cleanupModal = () => {
-                        cancelBtn.removeEventListener('click', handleCancel);
-                        confirmBtn.removeEventListener('click', handleConfirm);
-                    };
-                    
-                    cancelBtn.addEventListener('click', handleCancel);
-                    confirmBtn.addEventListener('click', handleConfirm);
-                    
-                    async function executeSubmission() {
-                        const btn = document.getElementById('submitBtn');
-                        const cleared = taxYes.checked;
-                        const taxNotesVal = cleared ? '' : document.getElementById('taxNotes').value.trim();
-                        const isCommercial = document.getElementById('commYes').checked ? 'Yes' : 'No';
-                        const tradeLicense = (isCommercial === 'Yes') ? (document.querySelector('input[name="tradeLicense"]:checked') ? document.querySelector('input[name="tradeLicense"]:checked').value : 'N/A') : 'N/A';
-                        const swmServices = document.querySelector('input[name="swmServices"]:checked').value;
-                        const amrutWater = document.querySelector('input[name="amrutWater"]:checked').value;
-                        const holdingTypeVal = document.getElementById('holdingType') ? document.getElementById('holdingType').value : 'N/A';
-                        const loggedInAgent = sessionStorage.getItem('loggedInAgent') || 'Unknown Agent';
-
-                        const payload = {
-                            action: 'submitData',
-                            agentName: loggedInAgent,
-                            wardNo: ward,
-                            assesseeId: assesseeId,
-                            holdingNo: holdingNo,
-                            holdingType: holdingTypeVal,
-                            headName: headName,
-                            familyCount: parseInt(familyCount, 10),
-                            aadhaarNo: aadhaarNo || 'N/A',
-                            voterNo: document.getElementById('voterNo').value.trim().toUpperCase() || 'N/A',
-                            contactNo: contactNo || 'N/A',
-                            taxClearance: cleared ? 'Yes' : 'No',
-                            taxNotes: taxNotesVal,
-                            commercialOwnership: isCommercial,
-                            tradeLicense: tradeLicense,
-                            swmServices: swmServices,
-                            amrutWater: amrutWater
-                        };
-
-                        btn.disabled = true;
-                        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> প্রসেস করা হচ্ছে / Processing…';
-                        showStatus('loading', '⏳ Ward ' + ward + ' শিটে তথ্য পাঠানো হচ্ছে…\nSending data to Ward ' + ward + ' sheet…');
-
-                        try {
-                            const response = await fetch(APPS_SCRIPT_URL, {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'text/plain' },
-                                body: JSON.stringify(payload)
-                            });
-                            const result = await response.json();
-
-                            if (result.status === 'success') {
-                                showStatus('success',
-                                    '✅ তথ্য সফলভাবে সংরক্ষিত হয়েছে!\n' +
-                                    'Ward ' + ward + ' শিটে যুক্ত করা হয়েছে।\n' +
-                                    'Data saved to Ward ' + ward + ' sheet successfully.'
-                                );
-
-                                // Reset all fields except Ward Selection to allow quick sequential data entries
-                                resetFormKeepWard();
+                        function checkSession() {
+                            const loggedInAgent = sessionStorage.getItem("loggedInAgent");
+                            if (loggedInAgent) {
+                                loginCard.classList.add('hidden');
+                                citizenCard.classList.remove('hidden');
+                                agentHeader.classList.remove('hidden');
+                                agentNameDisplay.textContent = loggedInAgent;
                             } else {
-                                showStatus('error', '❌ ত্রুটি: ' + result.message);
+                                loginCard.classList.remove('hidden');
+                                citizenCard.classList.add('hidden');
+                                agentHeader.classList.add('hidden');
                             }
-                        } catch (err) {
-                            console.error("Submission failed:", err);
-                            showStatus('error', '❌ নেটওয়ার্ক ত্রুটি। ইন্টারনেট সংযোগ পরীক্ষা করুন।\nNetwork error. Data could not be submitted to Apps Script.');
-                        } finally {
-                            btn.disabled = false;
-                            btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> ডেটাবেসে সুরক্ষিতভাবে জমা করুন &nbsp;/&nbsp; Secure Submit';
                         }
-                    }
-                });
 
-                function showStatus(type, msg) {
-                    const el = document.getElementById('statusBanner');
-                    el.className = 'status-banner ' + type;
-                    el.innerHTML = msg.replace(/\n/g, '<br>');
-                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
+                        // Logout action
+                        logoutBtn.addEventListener('click', () => {
+                            sessionStorage.removeItem("loggedInAgent");
+                            checkSession();
+                            showLoginStatus('success', '🔐 Logged out successfully.');
+                        });
 
-                function clearStatus() {
-                    const el = document.getElementById('statusBanner');
-                    el.className = 'status-banner';
-                    el.textContent = '';
-                }
+                        // ── AGENT LOGIN FLOW ───────────────────────────────────────
+                        loginForm.addEventListener('submit', async function (e) {
+                            e.preventDefault();
+                            const user = document.getElementById('loginUsername').value.trim();
+                            const pass = document.getElementById('loginPassword').value.trim();
+                            const btn = document.getElementById('loginBtn');
 
-                function resetFormKeepWard() {
-                    const currentWard = wardSel.value;
-                    citizenForm.reset();
-                    wardSel.value = currentWard;
+                            if (!user || !pass) {
+                                showLoginStatus('error', '⚠️ Please enter both login ID and password.');
+                                return;
+                            }
 
-                    // Clear status texts & styling highlights
-                    fetchStatus.className = 'fetch-status-text';
-                    fetchStatus.textContent = '';
+                            btn.disabled = true;
+                            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Authenticating…';
+                            showLoginStatus('loading', '⏳ Verifying credentials with database...');
 
-                    headNameInput.classList.remove('input-success', 'input-error');
-                    holdingNoInput.classList.remove('input-success', 'input-error');
-                    contactNoInput.classList.remove('input-success', 'input-error');
-                    assesseeIdInput.classList.remove('input-success', 'input-error');
+                            const payload = { action: 'login', username: user, password: pass };
 
-                    syncTax();
-                }
-            </script>
+                            try {
+                                // Send standard request
+                                const response = await fetch(APPS_SCRIPT_URL, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'text/plain' }, // Avoid preflight CORS issues in some environments
+                                    body: JSON.stringify(payload)
+                                });
+
+                                const data = await response.json();
+
+                                if (data.status === 'success') {
+                                    sessionStorage.setItem("loggedInAgent", data.name || user);
+                                    showLoginStatus('success', '✅ Login successful! Loading form...');
+                                    setTimeout(() => {
+                                        checkSession();
+                                        loginForm.reset();
+                                        document.getElementById('loginStatus').className = 'status-banner';
+                                        document.getElementById('loginStatus').textContent = '';
+                                    }, 1000);
+                                } else {
+                                    showLoginStatus('error', '❌ ' + (data.message || 'Invalid Login ID or Password.'));
+                                }
+                            } catch (err) {
+                                console.error("Authentication failed, checking offline demo bypass:", err);
+                                // OFFLINE FALLBACK FOR TESTING PURPOSES
+                                if (user.toLowerCase() === 'admin' && pass === 'admin123') {
+                                    sessionStorage.setItem("loggedInAgent", "Administrator (Demo)");
+                                    showLoginStatus('success', '✅ [Demo Mode] Login successful!');
+                                    setTimeout(() => {
+                                        checkSession();
+                                        loginForm.reset();
+                                        document.getElementById('loginStatus').className = 'status-banner';
+                                        document.getElementById('loginStatus').textContent = '';
+                                    }, 1000);
+                                } else {
+                                    showLoginStatus('error', '❌ Web app connection error. Double-check your APPS_SCRIPT_URL config.');
+                                }
+                            } finally {
+                                btn.disabled = false;
+                                btn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> লগইন করুন &nbsp;/&nbsp; Secure Login';
+                            }
+                        });
+
+                        function showLoginStatus(type, msg) {
+                            const el = document.getElementById('loginStatus');
+                            el.className = 'status-banner ' + type;
+                            el.textContent = msg;
+                        }
+
+                        // ── TAX CLEARANCE TOGGLE ──────────────────────────────────
+                        function syncTax() {
+                            if (taxYes.checked) {
+                                taxWrap.classList.add('collapsed');
+                                taxNotes.value = '';
+                            } else {
+                                taxWrap.classList.remove('collapsed');
+                            }
+                        }
+                        taxYes.addEventListener('change', syncTax);
+                        taxNo.addEventListener('change', syncTax);
+                        syncTax();
+
+                        // ── COMMERCIAL OWNERSHIP TOGGLE ───────────────────────────
+                        const commYes = document.getElementById('commYes');
+                        const commNo = document.getElementById('commNo');
+
+                        function syncCommercial() {
+                            if (commYes && commYes.checked) {
+                                tradeLicenseWrap.classList.remove('collapsed');
+                            } else {
+                                tradeLicenseWrap.classList.add('collapsed');
+                                // Reset trade license selection to default 'No'
+                                const tradeNoBtn = document.getElementById('tradeNo');
+                                if (tradeNoBtn) tradeNoBtn.checked = true;
+                            }
+                        }
+                        if (commYes && commNo) {
+                            commYes.addEventListener('change', syncCommercial);
+                            commNo.addEventListener('change', syncCommercial);
+                            syncCommercial();
+                        }
+
+                        // ── AUTO-FETCH ASSESSEE DETAILS ────────────────────────────
+                        async function fetchAssesseeData() {
+                            const id = assesseeIdInput.value.trim();
+                            if (!id) return;
+
+                            // Prevent fetching if already querying
+                            if (fetchDetailsBtn.disabled) return;
+
+                            fetchDetailsBtn.disabled = true;
+                            fetchDetailsBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
+                            showFetchStatus('loading', '⏳ Searching master database...');
+
+                            // Clear visual highlight classes
+                            headNameInput.classList.remove('input-success', 'input-error');
+                            holdingNoInput.classList.remove('input-success', 'input-error');
+                            if (holdingTypeInput) holdingTypeInput.classList.remove('input-success');
+                            assesseeIdInput.classList.remove('input-error');
+
+                            const payload = { action: 'fetchAssessee', assesseeId: id };
+
+                            try {
+                                const response = await fetch(APPS_SCRIPT_URL, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'text/plain' },
+                                    body: JSON.stringify(payload)
+                                });
+                                const result = await response.json();
+
+                                if (result.status === 'success' && result.data) {
+                                    const data = result.data;
+                                    headNameInput.value = data.assesseeName || '';
+                                    holdingNoInput.value = data.holdingNo || '';
+                                    if (holdingTypeInput) {
+                                        holdingTypeInput.value = data.holdingType || '';
+                                    }
+
+                                    // Flash success animations
+                                    headNameInput.classList.add('input-success');
+                                    holdingNoInput.classList.add('input-success');
+                                    if (holdingTypeInput && data.holdingType) holdingTypeInput.classList.add('input-success');
+
+                                    showFetchStatus('success', '✅ Details fetched automatically.');
+                                    clearStatus();
+                                } else {
+                                    showFetchStatus('error', '⚠️ Assessee ID not found. Enter details manually.');
+                                    assesseeIdInput.classList.add('input-error');
+                                }
+                            } catch (err) {
+                                console.error("Fetch query failed:", err);
+                                showFetchStatus('error', '⚠️ Fetch query failed. Server offline or CORS blocking.');
+                            } finally {
+                                fetchDetailsBtn.disabled = false;
+                                fetchDetailsBtn.innerHTML = '<i class="fa-solid fa-rotate"></i> Fetch / খুঁজুন';
+                            }
+                        }
+
+                        // Trigger fetch on button click or field blur
+                        fetchDetailsBtn.addEventListener('click', fetchAssesseeData);
+                        assesseeIdInput.addEventListener('blur', function () {
+                            // Trigger fetch only if ID contains substantial text
+                            if (assesseeIdInput.value.trim().length >= 3) {
+                                fetchAssesseeData();
+                            }
+                        });
+
+                        function showFetchStatus(type, msg) {
+                            fetchStatus.className = 'fetch-status-text ' + type;
+                            fetchStatus.textContent = msg;
+                        }
+
+                        // ── FORM VALIDATION ────────────────────────────────────────
+                        // Integer numbers only for family members
+                        familyCountInput.addEventListener('input', () => {
+                            const val = familyCountInput.value.trim();
+                            const isValid = /^[1-9]\d*$/.test(val); // Positive integer
+                            if (val === '' || isValid) {
+                                familyCountInput.classList.remove('input-error');
+                                familyCountError.classList.remove('visible');
+                            } else {
+                                familyCountInput.classList.add('input-error');
+                                familyCountError.classList.add('visible');
+                            }
+                        });
+
+                        // 12-digit format check for Aadhaar
+                        aadhaarNoInput.addEventListener('input', () => {
+                            const val = aadhaarNoInput.value.trim();
+                            const isValid = /^\d{12}$/.test(val);
+                            if (val === '' || isValid) {
+                                aadhaarNoInput.classList.remove('input-error');
+                                aadhaarError.classList.remove('visible');
+                                if (val !== '') aadhaarNoInput.classList.add('input-success');
+                            } else {
+                                aadhaarNoInput.classList.add('input-error');
+                                aadhaarNoInput.classList.remove('input-success');
+                                aadhaarError.classList.add('visible');
+                            }
+                        });
+
+                        // 10-digit format check for Mobile (starting with 6-9)
+                        contactNoInput.addEventListener('input', () => {
+                            const val = contactNoInput.value.trim();
+                            const isValid = /^[6-9]\d{9}$/.test(val);
+                            if (val === '' || isValid) {
+                                contactNoInput.classList.remove('input-error');
+                                contactError.classList.remove('visible');
+                                if (val !== '') contactNoInput.classList.add('input-success');
+                            } else {
+                                contactNoInput.classList.add('input-error');
+                                contactNoInput.classList.remove('input-success');
+                                contactError.classList.add('visible');
+                            }
+                        });
+
+                        // ── FORM SUBMISSION ────────────────────────────────────────
+                        citizenForm.addEventListener('submit', async function (e) {
+                            e.preventDefault();
+
+                            const ward = wardSel.value;
+                            const assesseeId = assesseeIdInput.value.trim();
+                            const headName = headNameInput.value.trim();
+                            const holdingNo = holdingNoInput.value.trim();
+                            const familyCount = familyCountInput.value.trim();
+                            const aadhaarNo = aadhaarNoInput.value.trim();
+                            const contactNo = contactNoInput.value.trim();
+
+                            // 1. Check Required fields
+                            if (!ward) {
+                                showStatus('error', '⚠️ অনুগ্রহ করে ওয়ার্ড নম্বর নির্বাচন করুন।\nPlease select a Ward Number.');
+                                wardSel.focus();
+                                return;
+                            }
+                            if (!assesseeId) {
+                                showStatus('error', '⚠️ অনুগ্রহ করে করদাতা আইডি লিখুন।\nPlease enter the Assessee ID.');
+                                assesseeIdInput.focus();
+                                return;
+                            }
+                            if (!headName) {
+                                showStatus('error', '⚠️ অনুগ্রহ করে পরিবারের প্রধানের নাম লিখুন।\nPlease enter the Family Head Name.');
+                                headNameInput.focus();
+                                return;
+                            }
+                            if (!holdingNo) {
+                                showStatus('error', '⚠️ অনুগ্রহ করে হোল্ডিং নম্বর লিখুন।\nPlease enter the Holding Number.');
+                                holdingNoInput.focus();
+                                return;
+                            }
+
+                            // 2. Validate Family Count
+                            if (!/^[1-9]\d*$/.test(familyCount)) {
+                                showStatus('error', '⚠️ পরিবারের সদস্য সংখ্যা ভুল।\nPlease correct the Family Members field.');
+                                familyCountInput.focus();
+                                return;
+                            }
+
+                            // 3. Validate Aadhaar (if provided)
+                            if (aadhaarNo !== '' && !/^\d{12}$/.test(aadhaarNo)) {
+                                showStatus('error', '⚠️ আধার নম্বর ভুল।\nPlease correct the Aadhaar Card Number.');
+                                aadhaarNoInput.focus();
+                                return;
+                            }
+
+                            // 4. Validate Contact (if provided)
+                            if (contactNo !== '' && !/^[6-9]\d{9}$/.test(contactNo)) {
+                                showStatus('error', '⚠️ যোগাযোগ নম্বর ভুল।\nPlease correct the Contact Number.');
+                                contactNoInput.focus();
+                                return;
+                            }
+
+                            // Modal Verification Trigger
+                            const modal = document.getElementById('wardVerifyModal');
+                            document.getElementById('modalName').textContent = headName;
+                            document.getElementById('modalId').textContent = assesseeId;
+                            document.getElementById('modalWard').textContent = ward;
+                            modal.classList.remove('hidden');
+
+                            // Attach one-time event listeners
+                            const confirmBtn = document.getElementById('modalConfirmBtn');
+                            const cancelBtn = document.getElementById('modalCancelBtn');
+
+                            const handleCancel = () => {
+                                modal.classList.add('hidden');
+                                cleanupModal();
+                            };
+
+                            const handleConfirm = async () => {
+                                modal.classList.add('hidden');
+                                cleanupModal();
+                                await executeSubmission();
+                            };
+
+                            const cleanupModal = () => {
+                                cancelBtn.removeEventListener('click', handleCancel);
+                                confirmBtn.removeEventListener('click', handleConfirm);
+                            };
+
+                            cancelBtn.addEventListener('click', handleCancel);
+                            confirmBtn.addEventListener('click', handleConfirm);
+
+                            async function executeSubmission() {
+                                const btn = document.getElementById('submitBtn');
+                                const cleared = taxYes.checked;
+                                const taxNotesVal = cleared ? '' : document.getElementById('taxNotes').value.trim();
+                                const isCommercial = document.getElementById('commYes').checked ? 'Yes' : 'No';
+                                const tradeLicense = (isCommercial === 'Yes') ? (document.querySelector('input[name="tradeLicense"]:checked') ? document.querySelector('input[name="tradeLicense"]:checked').value : 'N/A') : 'N/A';
+                                const swmServices = document.querySelector('input[name="swmServices"]:checked').value;
+                                const amrutWater = document.querySelector('input[name="amrutWater"]:checked').value;
+                                const holdingTypeVal = document.getElementById('holdingType') ? document.getElementById('holdingType').value : 'N/A';
+                                const loggedInAgent = sessionStorage.getItem('loggedInAgent') || 'Unknown Agent';
+
+                                const payload = {
+                                    action: 'submitData',
+                                    agentName: loggedInAgent,
+                                    wardNo: ward,
+                                    assesseeId: assesseeId,
+                                    holdingNo: holdingNo,
+                                    holdingType: holdingTypeVal,
+                                    headName: headName,
+                                    familyCount: parseInt(familyCount, 10),
+                                    aadhaarNo: aadhaarNo || 'N/A',
+                                    voterNo: document.getElementById('voterNo').value.trim().toUpperCase() || 'N/A',
+                                    contactNo: contactNo || 'N/A',
+                                    taxClearance: cleared ? 'Yes' : 'No',
+                                    taxNotes: taxNotesVal,
+                                    commercialOwnership: isCommercial,
+                                    tradeLicense: tradeLicense,
+                                    swmServices: swmServices,
+                                    amrutWater: amrutWater
+                                };
+
+                                btn.disabled = true;
+                                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> প্রসেস করা হচ্ছে / Processing…';
+                                showStatus('loading', '⏳ Ward ' + ward + ' শিটে তথ্য পাঠানো হচ্ছে…\nSending data to Ward ' + ward + ' sheet…');
+
+                                try {
+                                    const response = await fetch(APPS_SCRIPT_URL, {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'text/plain' },
+                                        body: JSON.stringify(payload)
+                                    });
+                                    const result = await response.json();
+
+                                    if (result.status === 'success') {
+                                        showStatus('success',
+                                            '✅ তথ্য সফলভাবে সংরক্ষিত হয়েছে!\n' +
+                                            'Ward ' + ward + ' শিটে যুক্ত করা হয়েছে।\n' +
+                                            'Data saved to Ward ' + ward + ' sheet successfully.'
+                                        );
+
+                                        // Reset all fields except Ward Selection to allow quick sequential data entries
+                                        resetFormKeepWard();
+                                    } else {
+                                        showStatus('error', '❌ ত্রুটি: ' + result.message);
+                                    }
+                                } catch (err) {
+                                    console.error("Submission failed:", err);
+                                    showStatus('error', '❌ নেটওয়ার্ক ত্রুটি। ইন্টারনেট সংযোগ পরীক্ষা করুন।\nNetwork error. Data could not be submitted to Apps Script.');
+                                } finally {
+                                    btn.disabled = false;
+                                    btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> ডেটাবেসে সুরক্ষিতভাবে জমা করুন &nbsp;/&nbsp; Secure Submit';
+                                }
+                            }
+                        });
+
+                        function showStatus(type, msg) {
+                            const el = document.getElementById('statusBanner');
+                            el.className = 'status-banner ' + type;
+                            el.innerHTML = msg.replace(/\n/g, '<br>');
+                            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+
+                        function clearStatus() {
+                            const el = document.getElementById('statusBanner');
+                            el.className = 'status-banner';
+                            el.textContent = '';
+                        }
+
+                        function resetFormKeepWard() {
+                            const currentWard = wardSel.value;
+                            citizenForm.reset();
+                            wardSel.value = currentWard;
+
+                            // Clear status texts & styling highlights
+                            fetchStatus.className = 'fetch-status-text';
+                            fetchStatus.textContent = '';
+
+                            headNameInput.classList.remove('input-success', 'input-error');
+                            holdingNoInput.classList.remove('input-success', 'input-error');
+                            contactNoInput.classList.remove('input-success', 'input-error');
+                            assesseeIdInput.classList.remove('input-success', 'input-error');
+
+                            syncTax();
+                        }
+                    </script>
 </body>
 
 </html>

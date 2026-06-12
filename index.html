@@ -1564,14 +1564,14 @@
                             const data = result.data;
                             headNameInput.value = data.assesseeName || '';
                             holdingNoInput.value = data.holdingNo || '';
-                            if (data.primaryPhNo) {
-                                contactNoInput.value = data.primaryPhNo;
+                            if (holdingTypeInput) {
+                                holdingTypeInput.value = data.holdingType || '';
                             }
 
                             // Flash success animations
                             headNameInput.classList.add('input-success');
                             holdingNoInput.classList.add('input-success');
-                            if (data.primaryPhNo) contactNoInput.classList.add('input-success');
+                            if (holdingTypeInput && data.holdingType) holdingTypeInput.classList.add('input-success');
 
                             showFetchStatus('success', '✅ Details fetched automatically.');
                             clearStatus();

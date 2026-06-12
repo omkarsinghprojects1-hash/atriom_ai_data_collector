@@ -895,6 +895,50 @@
                 transform: translateY(0);
             }
         }
+
+        /* ═══ MODAL STYLES ═══ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: transform 0.2s ease;
+        }
+
+        .modal-overlay.hidden .modal-card {
+            transform: scale(0.95);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 12px;
+        }
     </style>
 </head>
 
@@ -1067,12 +1111,18 @@
                                         placeholder="Full legal name (যেমন: রাম প্রসাদ দাস)" required>
                                 </div>
 
-                                <!-- HOLDING NO -->
-                                <div class="field-group">
-                                    <div class="field-label"><i class="fa-solid fa-house-chimney"></i> Holding Number
-                                        <span class="bn">/ হোল্ডিং নম্বর</span> <span class="req">*</span></div>
-                                    <input type="text" id="holdingNo" placeholder="Holding Number (যেমন: H-123)"
-                                        required>
+                                <!-- HOLDING NO & TYPE -->
+                                <div style="display: flex; gap: 14px;">
+                                    <div class="field-group" style="flex: 2;">
+                                        <div class="field-label"><i class="fa-solid fa-house-chimney"></i> Holding Number
+                                            <span class="bn">/ হোল্ডিং নম্বর</span> <span class="req">*</span></div>
+                                        <input type="text" id="holdingNo" placeholder="Holding Number (যেমন: H-123)"
+                                            required>
+                                    </div>
+                                    <div class="field-group" style="flex: 1;">
+                                        <div class="field-label"><i class="fa-solid fa-tag"></i> Type <span class="bn">/ ধরন</span></div>
+                                        <input type="text" id="holdingType" placeholder="COM/DOM" readonly style="background: #F3F4F6; cursor: not-allowed; border-color: #D1D5DB; color: #6B7280;">
+                                    </div>
                                 </div>
 
                                 <!-- TOTAL FAMILY MEMBERS -->
@@ -1142,7 +1192,49 @@
                                         </label>
                                     </div>
 
-                                    <!-- Trade License reveal (visible only when Tax Clearance is Yes) -->
+
+
+                                    <!-- Notes: shown only when "No" -->
+                                    <div id="taxNotesWrap" class="collapsible-wrap" style="margin-top:14px;">
+                                        <div class="field-group"
+                                            style="margin-bottom:0;background:#FFFBF5;border-color:#FDDCAE;">
+                                            <div class="field-label" style="color:#92400E;">
+                                                <i class="fa-solid fa-pen-to-square" style="color:#D97706;"></i>
+                                                Type of Tax (Pending duration) <span class="bn">/ করের ধরন (বকেয়া থাকার
+                                                    সময়কাল)</span>
+                                            </div>
+                                            <textarea id="taxNotes"
+                                                placeholder="Describe the details for the pending tax balance…"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- COMMERCIAL OWNERSHIP STATUS -->
+                                <div class="radio-card rc-commercial">
+                                    <div class="radio-head">
+                                        <i class="fa-solid fa-store" style="color:#2563EB;"></i>
+                                        <strong>Commercial Ownership Status / বাণিজ্যিক মালিকানা স্ট্যাটাস</strong>
+                                    </div>
+                                    <p class="radio-sub">Does this assessee have commercial ownership? / এই করদাতার কি বাণিজ্যিক মালিকানা আছে?</p>
+                                    
+                                    <div class="radio-options">
+                                        <label class="radio-pill">
+                                            <input type="radio" name="commercialOwnership" value="Yes" id="commYes">
+                                            <div class="pill-label">
+                                                <strong>✅ Yes — Commercial</strong>
+                                                <span>হ্যাঁ</span>
+                                            </div>
+                                        </label>
+                                        <label class="radio-pill">
+                                            <input type="radio" name="commercialOwnership" value="No" id="commNo" checked>
+                                            <div class="pill-label">
+                                                <strong>❌ No — None</strong>
+                                                <span>না</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <!-- Trade License reveal (visible only when Commercial Ownership is Yes) -->
                                     <div id="tradeLicenseWrap" class="collapsible-wrap collapsed"
                                         style="margin-top:14px;">
                                         <div class="field-group"
@@ -1171,20 +1263,6 @@
                                                     </div>
                                                 </label>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Notes: shown only when "No" -->
-                                    <div id="taxNotesWrap" class="collapsible-wrap" style="margin-top:14px;">
-                                        <div class="field-group"
-                                            style="margin-bottom:0;background:#FFFBF5;border-color:#FDDCAE;">
-                                            <div class="field-label" style="color:#92400E;">
-                                                <i class="fa-solid fa-pen-to-square" style="color:#D97706;"></i>
-                                                Type of Tax (Pending duration) <span class="bn">/ করের ধরন (বকেয়া থাকার
-                                                    সময়কাল)</span>
-                                            </div>
-                                            <textarea id="taxNotes"
-                                                placeholder="Describe the details for the pending tax balance…"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1257,12 +1335,33 @@
                         </div>
                     </div>
 
-            </div>
-
             <footer>
                 🏛️ Jalpaiguri Municipal Corporation &nbsp;·&nbsp; Citizen Data Registry &nbsp;·&nbsp;
                 সমস্ত তথ্য সুরক্ষিত ও গোপনীয় — All data is securely stored ward-wise.
             </footer>
+
+    <!-- ═══ MODAL FOR WARD VERIFICATION ═══ -->
+    <div id="wardVerifyModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <i class="fa-solid fa-triangle-exclamation" style="color:#D97706; font-size:24px;"></i>
+                <h3 style="margin-left: 10px; color:#92400E; margin-bottom: 0;">Verify Ward Mapping</h3>
+            </div>
+            <div class="modal-body">
+                <p>You are about to submit data for:</p>
+                <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.5;">
+                    <li><strong>Assessee Name:</strong> <span id="modalName" style="color: #4B5563;"></span></li>
+                    <li><strong>Assessee ID:</strong> <span id="modalId" style="color: #4B5563;"></span></li>
+                </ul>
+                <p style="margin-top:16px; font-weight:600; color:#1D4ED8; font-size: 16px;">Target Ward: <span id="modalWard"></span></p>
+                <p class="hint" style="margin-top:16px;">Is this Ward number correct? If this citizen belongs to a different ward, please click 'No, Go Back' and change the Ward Number.</p>
+            </div>
+            <div class="modal-footer" style="display: flex; gap: 12px; margin-top: 24px;">
+                <button type="button" class="btn-cancel" id="modalCancelBtn" style="flex: 1; padding: 12px; background: #F3F4F6; border: 1px solid #D1D5DB; border-radius: 8px; font-weight: 600; cursor: pointer;">No, Go Back</button>
+                <button type="button" class="btn-confirm" id="modalConfirmBtn" style="flex: 1; padding: 12px; background: #2563EB; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Yes, Submit Data</button>
+            </div>
+        </div>
+    </div>
 
             <script>
                 // ── BACKEND WEB APP CONFIGURATION ──────────────────────────
@@ -1403,18 +1502,34 @@
                 function syncTax() {
                     if (taxYes.checked) {
                         taxWrap.classList.add('collapsed');
-                        tradeLicenseWrap.classList.remove('collapsed');
                         taxNotes.value = '';
                     } else {
                         taxWrap.classList.remove('collapsed');
-                        tradeLicenseWrap.classList.add('collapsed');
-                        // Reset trade license selection to default 'No'
-                        document.getElementById('tradeNo').checked = true;
                     }
                 }
                 taxYes.addEventListener('change', syncTax);
                 taxNo.addEventListener('change', syncTax);
                 syncTax();
+
+                // ── COMMERCIAL OWNERSHIP TOGGLE ───────────────────────────
+                const commYes = document.getElementById('commYes');
+                const commNo = document.getElementById('commNo');
+
+                function syncCommercial() {
+                    if (commYes && commYes.checked) {
+                        tradeLicenseWrap.classList.remove('collapsed');
+                    } else {
+                        tradeLicenseWrap.classList.add('collapsed');
+                        // Reset trade license selection to default 'No'
+                        const tradeNoBtn = document.getElementById('tradeNo');
+                        if(tradeNoBtn) tradeNoBtn.checked = true;
+                    }
+                }
+                if (commYes && commNo) {
+                    commYes.addEventListener('change', syncCommercial);
+                    commNo.addEventListener('change', syncCommercial);
+                    syncCommercial();
+                }
 
                 // ── AUTO-FETCH ASSESSEE DETAILS ────────────────────────────
                 async function fetchAssesseeData() {
@@ -1431,8 +1546,9 @@
                     // Clear visual highlight classes
                     headNameInput.classList.remove('input-success', 'input-error');
                     holdingNoInput.classList.remove('input-success', 'input-error');
-                    contactNoInput.classList.remove('input-success', 'input-error');
                     assesseeIdInput.classList.remove('input-error');
+                    const holdingTypeInput = document.getElementById('holdingType');
+                    if(holdingTypeInput) holdingTypeInput.classList.remove('input-success');
 
                     const payload = { action: 'fetchAssessee', assesseeId: id };
 
@@ -1585,59 +1701,98 @@
                         return;
                     }
 
-                    // Perform submit
-                    const btn = document.getElementById('submitBtn');
-                    const cleared = taxYes.checked;
-                    const tradeLicense = cleared ? (document.querySelector('input[name="tradeLicense"]:checked').value) : 'N/A';
-                    const swmServices = document.querySelector('input[name="swmServices"]:checked').value;
-                    const amrutWater = document.querySelector('input[name="amrutWater"]:checked').value;
-
-                    const payload = {
-                        action: 'submitData',
-                        wardNo: ward,
-                        assesseeId: assesseeId,
-                        holdingNo: holdingNo,
-                        headName: headName,
-                        familyCount: parseInt(familyCount, 10),
-                        aadhaarNo: aadhaarNo || 'N/A',
-                        voterNo: document.getElementById('voterNo').value.trim().toUpperCase() || 'N/A',
-                        contactNo: contactNo || 'N/A',
-                        taxClearance: cleared ? 'Yes' : 'No',
-                        tradeLicense: tradeLicense,
-                        swmServices: swmServices,
-                        amrutWater: amrutWater
+                    // Modal Verification Trigger
+                    const modal = document.getElementById('wardVerifyModal');
+                    document.getElementById('modalName').textContent = headName;
+                    document.getElementById('modalId').textContent = assesseeId;
+                    document.getElementById('modalWard').textContent = ward;
+                    modal.classList.remove('hidden');
+                    
+                    // Attach one-time event listeners
+                    const confirmBtn = document.getElementById('modalConfirmBtn');
+                    const cancelBtn = document.getElementById('modalCancelBtn');
+                    
+                    const handleCancel = () => {
+                        modal.classList.add('hidden');
+                        cleanupModal();
                     };
+                    
+                    const handleConfirm = async () => {
+                        modal.classList.add('hidden');
+                        cleanupModal();
+                        await executeSubmission();
+                    };
+                    
+                    const cleanupModal = () => {
+                        cancelBtn.removeEventListener('click', handleCancel);
+                        confirmBtn.removeEventListener('click', handleConfirm);
+                    };
+                    
+                    cancelBtn.addEventListener('click', handleCancel);
+                    confirmBtn.addEventListener('click', handleConfirm);
+                    
+                    async function executeSubmission() {
+                        const btn = document.getElementById('submitBtn');
+                        const cleared = taxYes.checked;
+                        const taxNotesVal = cleared ? '' : document.getElementById('taxNotes').value.trim();
+                        const isCommercial = document.getElementById('commYes').checked ? 'Yes' : 'No';
+                        const tradeLicense = (isCommercial === 'Yes') ? (document.querySelector('input[name="tradeLicense"]:checked') ? document.querySelector('input[name="tradeLicense"]:checked').value : 'N/A') : 'N/A';
+                        const swmServices = document.querySelector('input[name="swmServices"]:checked').value;
+                        const amrutWater = document.querySelector('input[name="amrutWater"]:checked').value;
+                        const holdingTypeVal = document.getElementById('holdingType') ? document.getElementById('holdingType').value : 'N/A';
+                        const loggedInAgent = sessionStorage.getItem('loggedInAgent') || 'Unknown Agent';
 
-                    btn.disabled = true;
-                    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> প্রসেস করা হচ্ছে / Processing…';
-                    showStatus('loading', '⏳ Ward ' + ward + ' শিটে তথ্য পাঠানো হচ্ছে…\nSending data to Ward ' + ward + ' sheet…');
+                        const payload = {
+                            action: 'submitData',
+                            agentName: loggedInAgent,
+                            wardNo: ward,
+                            assesseeId: assesseeId,
+                            holdingNo: holdingNo,
+                            holdingType: holdingTypeVal,
+                            headName: headName,
+                            familyCount: parseInt(familyCount, 10),
+                            aadhaarNo: aadhaarNo || 'N/A',
+                            voterNo: document.getElementById('voterNo').value.trim().toUpperCase() || 'N/A',
+                            contactNo: contactNo || 'N/A',
+                            taxClearance: cleared ? 'Yes' : 'No',
+                            taxNotes: taxNotesVal,
+                            commercialOwnership: isCommercial,
+                            tradeLicense: tradeLicense,
+                            swmServices: swmServices,
+                            amrutWater: amrutWater
+                        };
 
-                    try {
-                        const response = await fetch(APPS_SCRIPT_URL, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'text/plain' },
-                            body: JSON.stringify(payload)
-                        });
-                        const result = await response.json();
+                        btn.disabled = true;
+                        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> প্রসেস করা হচ্ছে / Processing…';
+                        showStatus('loading', '⏳ Ward ' + ward + ' শিটে তথ্য পাঠানো হচ্ছে…\nSending data to Ward ' + ward + ' sheet…');
 
-                        if (result.status === 'success') {
-                            showStatus('success',
-                                '✅ তথ্য সফলভাবে সংরক্ষিত হয়েছে!\n' +
-                                'Ward ' + ward + ' শিটে যুক্ত করা হয়েছে।\n' +
-                                'Data saved to Ward ' + ward + ' sheet successfully.'
-                            );
+                        try {
+                            const response = await fetch(APPS_SCRIPT_URL, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'text/plain' },
+                                body: JSON.stringify(payload)
+                            });
+                            const result = await response.json();
 
-                            // Reset all fields except Ward Selection to allow quick sequential data entries
-                            resetFormKeepWard();
-                        } else {
-                            showStatus('error', '❌ ত্রুটি: ' + result.message);
+                            if (result.status === 'success') {
+                                showStatus('success',
+                                    '✅ তথ্য সফলভাবে সংরক্ষিত হয়েছে!\n' +
+                                    'Ward ' + ward + ' শিটে যুক্ত করা হয়েছে।\n' +
+                                    'Data saved to Ward ' + ward + ' sheet successfully.'
+                                );
+
+                                // Reset all fields except Ward Selection to allow quick sequential data entries
+                                resetFormKeepWard();
+                            } else {
+                                showStatus('error', '❌ ত্রুটি: ' + result.message);
+                            }
+                        } catch (err) {
+                            console.error("Submission failed:", err);
+                            showStatus('error', '❌ নেটওয়ার্ক ত্রুটি। ইন্টারনেট সংযোগ পরীক্ষা করুন।\nNetwork error. Data could not be submitted to Apps Script.');
+                        } finally {
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> ডেটাবেসে সুরক্ষিতভাবে জমা করুন &nbsp;/&nbsp; Secure Submit';
                         }
-                    } catch (err) {
-                        console.error("Submission failed:", err);
-                        showStatus('error', '❌ নেটওয়ার্ক ত্রুটি। ইন্টারনেট সংযোগ পরীক্ষা করুন।\nNetwork error. Data could not be submitted to Apps Script.');
-                    } finally {
-                        btn.disabled = false;
-                        btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> ডেটাবেসে সুরক্ষিতভাবে জমা করুন &nbsp;/&nbsp; Secure Submit';
                     }
                 });
 
